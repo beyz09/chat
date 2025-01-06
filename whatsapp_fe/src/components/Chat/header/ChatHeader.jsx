@@ -56,7 +56,7 @@ function ChatHeader({ online, callUser, socket }) {
           {1 == 1 ? (
             <li onClick={() => callUser()}>
               <button className="btn">
-                <CallIcon />
+                <VideoCallIcon />
               </button>
             </li>
           ) : null}
