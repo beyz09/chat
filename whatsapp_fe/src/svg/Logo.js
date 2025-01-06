@@ -1,4 +1,4 @@
-import logo from 'c:/Users/loveo/Documents/GitHub/chatApp/whatsapp_fe/src/assets/logo192.png';
+import logo from 'c:/Users/loveo/Desktop/chatApp/whatsapp_fe/src/assets/logo192.png';
 
 export default function Logo() {
   return (
