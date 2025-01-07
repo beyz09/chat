@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import { createGroupConversation } from "../../../../features/chatSlice";
+
 export default function CreateGroup({ setShowCreateGroup }) {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
@@ -13,6 +14,7 @@ export default function CreateGroup({ setShowCreateGroup }) {
   const [name, setName] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [selectedUsers, setSelectedUsers] = useState([]);
+
   const handleSearch = async (e) => {
     if (e.target.value && e.key === "Enter") {
       setSearchResults([]);
@@ -46,6 +48,7 @@ export default function CreateGroup({ setShowCreateGroup }) {
       setSearchResults([]);
     }
   };
+
   const createGroupHandler = async () => {
     if (status !== "loading") {
       let users = [];
@@ -57,10 +60,14 @@ export default function CreateGroup({ setShowCreateGroup }) {
         users,
         token: user.token,
       };
-      let newConvo = await dispatch(createGroupConversation(values));
+      await dispatch(createGroupConversation(values));
       setShowCreateGroup(false);
+      
+      // Sayfayı yenile
+      window.location.reload();
     }
   };
+
   return (
     <div className="createGroupAnimation relative flex0030 h-full z-40">
       {/*Container*/}

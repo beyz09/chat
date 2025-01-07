@@ -16,7 +16,7 @@ export default function ChatMessages({ typing }) {
   };
   return (
     <div
-      className="mb-[60px] bg-[url('https://res.cloudinary.com/due4rheog/image/upload/v1736088189/app/xggdlbnc1ejagohlwvnd.png')]
+      className="mb-[60px] bg-[url('https://res.cloudinary.com/due4rheog/image/upload/v1736212381/app/xumfh1rem0h5tnrx3zwn.png')]
     bg-cover bg-no-repeat
     "
     >

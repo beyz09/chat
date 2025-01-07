@@ -2,9 +2,9 @@ function VideoCallIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="stroke-blue-500 scale-[65%]"
+      className="stroke-white-500 scale-[65%]"
       fill="transparent"
-      stroke="currentColor"
+      stroke="white"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="1"

@@ -32,3 +32,25 @@ export const verify = async (token, secret) => {
     });
   });
 };
+
+const deleteConversationHandler = async () => {
+  try {
+    const response = await fetch(`/api/conversations/${convo._id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Sunucudan konuşma silinemedi.");
+    }
+
+    await dispatch(deleteConversation(convo._id));
+    socket.emit("leave conversation", convo._id);
+    console.log("Konuşma sunucudan ve istemciden silindi.");
+  } catch (error) {
+    console.error("Konuşmayı silerken hata:", error);
+  }
+};
+
